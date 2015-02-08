@@ -53,11 +53,22 @@
             <md-card>
               <md-card-content>
                 <p ng-repeat="paragraph in paragraphs">{{ paragraph }}</p>
+                <md-button class="md-fab md-accent" ng-click="addParagraph(includeTags)" aria-label="Add Paragraph">
+                  <md-tooltip>
+                    Add Paragraph
+                  </md-tooltip>
+                  <i class="fa fa-lg fa-plus"></i>
+                </md-button>
               </md-card-content>
             </md-card>
           </div>
         </section>
       </md-content>
+      <md-toolbar>
+        <h1 class="md-toolbar-tools">
+          Footer
+        </h1>
+      </md-toolbar>
     </div>
     <script src="//cdn.jsdelivr.net/hammerjs/2.0.4/hammer.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>

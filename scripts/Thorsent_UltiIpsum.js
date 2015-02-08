@@ -82,13 +82,19 @@
     .config(["$mdThemingProvider", function($mdThemingProvider) {
       $mdThemingProvider.theme('default')
         .primaryPalette('indigo')
-        .accentPalette('red');
+        .accentPalette('pink');
     }])
 
     .controller("IpsumCtrl", ["$scope", function($scope) {
 
+      $scope.addParagraph = function(includeTags) {
+        $scope.paragraphs.push(UltiIpsum.generateParagraph(includeTags, false));
+        $scope.options.paragraphs = $scope.paragraphs.length;
+      };
+
       $scope.generate = function(options) {
         $scope.paragraphs = UltiIpsum.generateIpsum(options.paragraphs, options.includeLatin, options.includeTags, options.beginWith);
+        $scope.includeTags = options.includeTags;
       };
 
       $scope.options = DEFAULT_OPTIONS;
