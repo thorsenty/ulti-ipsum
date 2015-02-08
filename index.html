@@ -25,7 +25,7 @@
           <div>
             <div>
               <div class="shim card">
-                <h1>{{ title }}</h1>
+                <h1>Ulti Ipsum</h1>
                 <p>Filler Text for the Flatball Enthusiast</p>
               </div>
             </div>
@@ -45,6 +45,31 @@
             </md-button>
           </h1>
         </md-toolbar>
+        <md-content>
+          <section layout="row" layout-align="center start" layout-wrap>
+            <div flex="100" flex-gt-sm="33" layout-padding>
+              <p>Text Type</p>
+              <md-radio-group ng-model="options.includeLatin" flex>
+                <md-radio-button ng-value="true">Ultimate and Latin</md-radio-button>
+                <md-radio-button ng-value="false">Everything Ultimate</md-radio-button>
+              </md-radio-group>
+              <md-input-container flex>
+                <label>Paragraphs</label>
+                <input ng-model="options.paragraphs" type="number" min="1" max="15"/>
+              </md-input-container>
+              <md-checkbox ng-model="options.includeTags" aria-label="Include Paragraph Tags" flex>
+                Include Paragraph Tags
+              </md-checkbox>
+              <md-checkbox ng-model="options.beginWith" aria-label="Begin with 'Ulti ipsum ...'" flex>
+                Begin with "Ulti ipsum ..."
+              </md-checkbox>
+              <md-button class="md-primary" ng-click="generate()">Generate</md-button>
+            </div>
+            <div flex="100" flex-gt-sm="66">
+              <span>Text Area</span>
+            </div>
+          </section>
+        </md-content>
       </div>
     </div>
     <script src="//cdn.jsdelivr.net/hammerjs/2.0.4/hammer.min.js"></script>
