@@ -19,6 +19,11 @@
     .controller("IpsumCtrl", ["$scope", function($scope) {
       
       $scope.options = DEFAULT_OPTIONS;
+      $scope.paragraphs = [
+        "Paragraph 1",
+        "Paragraph 2",
+        "Paragraph 3"
+      ];
 
       $scope.generate = function() {
         console.log($scope.options);
