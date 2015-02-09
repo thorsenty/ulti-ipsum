@@ -13,11 +13,20 @@
 
     activeWordList: [],
 
+    constrainParagraphCount: function (paragraphCount) {
+      if (!angular.isNumber(paragraphCount)) {
+        paragraphCount = 3;
+      }
+
+      paragraphCount = Math.max(paragraphCount, 1);
+      paragraphCount = Math.min(paragraphCount, 15);
+
+      return paragraphCount;
+    },
+
     generateIpsum: function(paragraphCount, includeLatin, includeTags, beginWith) {
 
-      if (!angular.isNumber(paragraphCount) || paragraphCount < 1 || paragraphCount > 15) {
-        paragraphCount = DEFAULT_OPTIONS.paragraphs;
-      }
+      paragraphCount = UltiIpsum.constrainParagraphCount(paragraphCount);
     
       var activeWords = [].concat(UltiIpsum.Words.Ultimate);
       if (includeLatin) {
@@ -95,6 +104,7 @@
       $scope.generate = function(options) {
         $scope.paragraphs = UltiIpsum.generateIpsum(options.paragraphs, options.includeLatin, options.includeTags, options.beginWith);
         $scope.includeTags = options.includeTags;
+        $scope.options.paragraphs = $scope.paragraphs.length;
       };
 
       $scope.options = DEFAULT_OPTIONS;

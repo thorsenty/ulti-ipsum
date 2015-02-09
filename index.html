@@ -37,7 +37,7 @@
                 </md-radio-group>
                 <md-input-container flex>
                   <label>Paragraphs</label>
-                  <input ng-model="options.paragraphs" type="number" min="1" max="15"/>
+                  <input ng-model="options.paragraphs" type="number"/>
                 </md-input-container>
                 <md-checkbox ng-model="options.includeTags" aria-label="Include Paragraph Tags" flex>
                   Include Paragraph Tags
@@ -49,18 +49,20 @@
               </md-card-content>
             </md-card>
           </div>
-          <div flex="100" flex-gt-sm="66" layout-padding>
+          <div class="text-container" flex="100" flex-gt-sm="66" layout-padding>
             <md-card>
               <md-card-content>
                 <p ng-repeat="paragraph in paragraphs">{{ paragraph }}</p>
-                <md-button class="md-fab md-accent" ng-click="addParagraph(includeTags)" aria-label="Add Paragraph">
-                  <md-tooltip>
-                    Add Paragraph
-                  </md-tooltip>
-                  <i class="fa fa-lg fa-plus"></i>
-                </md-button>
               </md-card-content>
             </md-card>
+            <div class="add-button-container" ng-show="paragraphs.length < 15" layout="row" layout-align="center center">
+              <md-button class="md-fab md-accent" ng-click="addParagraph(includeTags)" aria-label="Add Paragraph">
+                <md-tooltip>
+                  Add Paragraph
+                </md-tooltip>
+                <i class="fa fa-lg fa-plus"></i>
+              </md-button>
+            </div>
           </div>
         </section>
       </md-content>

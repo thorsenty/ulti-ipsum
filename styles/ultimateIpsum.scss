@@ -16,9 +16,24 @@
 
 	md-content {
 		background: none;
+		margin-bottom: 16px;
 	}
 
 	md-card {
 		background: #FFF;
+	}
+
+	.group-label {
+		color: rgba(0,0,0,0.54);
+		font-size:	0.75em;
+	}
+
+	.text-container md-card {
+		padding-bottom: 8px;
+	}
+
+	.add-button-container {
+		padding: 0 24px;
+		margin-top: -36px;
 	}
 }
