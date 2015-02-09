@@ -1,7 +1,7 @@
 .ulti-ipsum {
 
 	background: #F5F5F5;
-	
+
 	md-toolbar .md-toolbar-tools .md-button,
   md-toolbar .md-toolbar-tools .md-button:hover {
 		box-shadow: none;
@@ -35,5 +35,26 @@
 	.add-button-container {
 		padding: 0 24px;
 		margin-top: -36px;
+	}
+
+	.footer {
+		h2 {
+			font-size: 1em;
+			margin: 0.5em 0;
+		}
+
+		p {
+			font-size: 0.75em;
+			margin: 0;
+		}
+
+		a {
+			color: #FFF;
+		}
+
+		img {
+			width: 200px;
+			height: auto;
+		}
 	}
 }
